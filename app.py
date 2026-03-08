@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import pickle
-import numpy as np
+import numpy as np 
+import os
 
 # load trained model
 modelobject = pickle.load(open(r"C:\Users\krish\Downloads\Project-1-cdgi\model\model.pkl","rb"))
@@ -53,5 +54,6 @@ def predict():
                            prediction_text=f"Predicted House Price: ₹ {round(prediction[0],2)}")
 
 # run app
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
