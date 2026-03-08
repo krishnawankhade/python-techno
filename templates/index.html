@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>House Price Prediction</title>
+
+<style>
+
+body{
+font-family: Arial;
+background: linear-gradient(120deg,#2980b9,#6dd5fa);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:10px;
+width:400px;
+box-shadow:0px 5px 15px rgba(0,0,0,0.3);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#2980b9;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1f6691;
+}
+
+.result{
+margin-top:20px;
+text-align:center;
+font-size:20px;
+color:green;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🏠 House Price Prediction</h2>
+
+<form action="/predict" method="post">
+
+<input type="number" name="area" placeholder="Area (sq ft)" required>
+
+<input type="number" name="bedrooms" placeholder="Bedrooms" required>
+
+<input type="number" name="bathrooms" placeholder="Bathrooms" required>
+
+<input type="number" name="stories" placeholder="Stories" required>
+
+<button type="submit">Predict Price</button>
+
+</form>
+
+<div class="result">
+{{ prediction_text }}
+</div>
+
+</div>
+
+</body>
+</html>
+<form action="/predict" method="post"></form>
