@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 # load trained model
-modelobject = pickle.load(open(r"C:\Users\krish\Downloads\Project-1-cdgi\model\model.pkl","rb"))
+modelobject = pickle.load(open("model/model.pkl","rb"))
 
 # create flask app
 app = Flask(__name__)
